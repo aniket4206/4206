@@ -1,0 +1,63 @@
+ASSINGMENT 3
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn import metrics
+df = pd.read_csv("/content/Iris.csv")
+df.head()
+df.describe()
+df.groupby('Species').mean()
+df.groupby('Species').median()
+df.groupby('Species').std()
+df.groupby('Species').agg([np.mean,np.median, np.std])
+
+ASSINMENT 8
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+df = sns.load_dataset('titanic')
+df.head()
+sns.distplot(x=df['age'])
+sns.jointplot(x=df['age'],y=df['fare'], kind='hex')
+sns.rugplot(df['fare'])
+sns.barplot(x='sex',y='age', data=df)
+sns.countplot(x='sex' , data=df)
+sns.boxplot(x='sex',y='age',data=df )
+sns.violinplot(x='sex',y='age', data=df)
+sns.swarmplot(x='sex',y='age',data=df)
+corr=df.corr()
+sns.heatmap(corr)
+sns.boxplot(x='sex',y='age' data = dataset)
+sns.boxplot(x='sex', y = 'age', data = dataset , hue = 'survived')
+
+ASSINGMENT 9
+
+import seaborn as sns
+dataset = sns.load_dataset('titanic')
+dataset.head()
+sns.boxplot(x='sex', y='age', data = dataset)
+sns.boxplot(x='sex', y ='age', data = dataset ,hue='survived' )
+
+ASSINGMENT 10
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import pylab
+import seaborn as sns
+import os
+os.getcwd()
+os.chdir("/content/dsbda")
+df = pd.read_csv("/content/dsbda/Iris.csv")
+df.head()
+df.isnull().sum()
+sns.set(style="whitegrid", palette="GnBu_d" , rc={'figure.figsiz
+e':(11.7,8.27)})
+sns.boxplot(x='Species' , y ='SepalLengthCm' , data =df)
+plt.title('Distribution of sepal lenght')
+plt.show()
+df.hist()
+
